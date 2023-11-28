@@ -2,8 +2,8 @@ import cv2
 import os
 
 
-def capturePicture(camera_index=0, name='capturedImage.jpg'):
-    cap = cv2.VideoCapture(camera_index)
+def capturePicture(name='capturedImage.jpg'):
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     if not cap.isOpened():
         print("Error: Could not open the camera")
         return
@@ -15,7 +15,9 @@ def capturePicture(camera_index=0, name='capturedImage.jpg'):
 
         cv2.imwrite('imgTest/'+name, frame)
         print(f"Image saved as {name}")
-
     finally:
         cap.release()
     return name
+
+
+capturePicture()
