@@ -28,11 +28,16 @@ def dataGyro():
             abs_gy += abs(gy)
             abs_gz += abs(gz)
             sleep(0.5)
-        
+
         print(f'\nAbsolute Displacement X: {abs_gx}')
         print(f'Absolute Displacement Y: {abs_gy}')
         print(f'Absolute Displacement Z: {abs_gz}')
-        print(f'Euclidean Distance: {(abs_gx**2+abs_gy**2+abs_gz**2)**0.5}\n')
+        euclid = (abs_gx**2+abs_gy**2+abs_gz**2)**0.5
+        print(f'Euclidean Distance: {euclid}', end=" -> ")
+        if euclid > 100:
+            print("Beri pakan")
+        else:
+            print("Tidak beri pakan")
 
 
 dataGyro()
