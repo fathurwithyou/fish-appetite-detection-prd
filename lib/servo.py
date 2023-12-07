@@ -4,8 +4,8 @@ from machine import Pin, PWM
 class Servo:
     # these defaults work for the standard TowerPro SG90
     __servo_pwm_freq = 50
-    __min_u16_duty = 600  # offset for correction
-    __max_u16_duty = 6000  # offset for correction
+    __min_u16_duty = 600
+    __max_u16_duty = 6000
     min_angle = 0
     max_angle = 180
     current_angle = 0.001

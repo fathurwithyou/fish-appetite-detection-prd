@@ -1,5 +1,5 @@
 import cv2
-import os
+import time
 
 
 def capturePicture(name='capturedImage.jpg'):
@@ -8,6 +8,8 @@ def capturePicture(name='capturedImage.jpg'):
         print("Error: Could not open the camera")
         return
     try:
+        # Allow the camera to adjust to the lighting conditions
+        time.sleep(1)
         ret, frame = cap.read()
         if not ret:
             print("Error: Could not capture a frame.")
@@ -18,6 +20,3 @@ def capturePicture(name='capturedImage.jpg'):
     finally:
         cap.release()
     return name
-
-
-capturePicture()

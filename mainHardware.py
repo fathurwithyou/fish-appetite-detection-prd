@@ -1,7 +1,7 @@
 from time import sleep
 from imu import MPU6050
 from machine import Pin, I2C
-from servoRotate import rotateServo
+from lib.servoRotate import rotateServo
 
 # Shows Pi is on by turning on LED when plugged in
 LED = Pin("LED", Pin.OUT)

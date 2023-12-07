@@ -6,10 +6,10 @@ motor = Servo(pwmPin)
 
 
 def rotateServo():
-    print('Servo is working...')
-    motor.move(45)
-    utime.sleep(1)
-    motor.move(180)
-    print('Servo is not working...')
-
-rotateServo()
+    while True:
+        print('Servo is working...')
+        utime.sleep(1)
+        motor.move(45)
+        utime.sleep(1)
+        motor.move(180)
+        print('Servo is not working...')
